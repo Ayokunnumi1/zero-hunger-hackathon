@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_23_174518) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_23_183544) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "food_lists", force: :cascade do |t|
+    t.string "food_name"
+    t.integer "food_amount"
+    t.date "donate_date"
+    t.string "collected_from"
+    t.string "donar_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
