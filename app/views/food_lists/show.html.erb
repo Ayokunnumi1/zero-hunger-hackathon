@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>Food List Details</h2>
+    </div>
+    <div class="card-body">
+      <%= render @food_list %>
+    </div>
+  </div>
+
+  <div class="mt-3 d-flex">
+    <%= link_to "Edit this food list", edit_food_list_path(@food_list), class: "btn btn-warning mr-2" %>
+    <%= link_to "Back to food lists", food_lists_path, class: "btn btn-secondary mr-2" %>
+    <%= button_to "Destroy this food list", @food_list, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+</div>
