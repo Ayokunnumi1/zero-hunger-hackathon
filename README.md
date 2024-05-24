@@ -1,41 +1,36 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <h3><b>Haba Na Haba</b></h3>
-
-</div>
-
-# 📗 Table of Contents
-
-- [📗 Table of Contents](#-table-of-contents)
-- [📖 Haba na Haba ](#-haba-na-haba-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-    - [🚀 Video Demo](#video-demo) 
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-  - [👥 Author ](#-author-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
-
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 mvrva-transport <a name="about-project"></a>
+# 📖 HABA-Na-HABA USSD APPLICATION <a name="about-project"></a>
 
-An app to connect the waste points with the vulnerable groups. If there's food that's about to be wasted, people can collect it for their own use. Collect data and perform your own analysis.
+This is an application designed to connect waste points with vulnerable groups, enabling people to collect food that's about to be wasted for their own use. This application uses Africa's Talking API for USSD functionality and a Rails backend.
 
-Reduction of costs and have accurate data. Increase the number of beneficiaries. Get more food waste centers to get their food. Decrease of overhead costs.
+### Key Features <a name="key-features"></a>
 
-## 🛠 Built With <a name="built-with"></a>
+- Geolocation technology.
+- Real-Time Notifications.
+- Surplus Food and  needs Listings.
+- User-Friendly Interface.
+- Feedback and Rating System
+- Ussd functionality for the app.
+
+### Prerequisites
+
+In order to run this project you need:
+
+- Ruby on Rails Environment
+- Africa's Talking Account
+- Africa's Talking Gem
+- Rails Application Setup
+- Environment Configuration
+- Controller and Routes
+- Controller Logic
+- Africa's Talking Callback URL
+- Ngrok (for Local Development)
+- Testing
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -60,47 +55,8 @@ Reduction of costs and have accurate data. Increase the number of beneficiaries.
   </ul>
 </details>
 
-### Key Features <a name="key-features"></a>
-
-- Geolocation technology.
-- Real-Time Notifications.
-- Surplus Food and  needs Listings.
-- User-Friendly Interface.
-- Feedback and Rating System
-- Ussd functionality for the app.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Video Demo <a name="live-demo"></a>
-
-- [Live Video Link]()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-Clone this repository to your desired folder:
-
-```
-git@github.com:Ayokunnumi1/zero-hunger-hackathon.git
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Prerequisites
-
-In order to run this project you need:
-
-- Ruby on Rails Environment
-- Africa's Talking Account
-- Africa's Talking Gem
-- Rails Application Setup
-- Environment Configuration
-- Controller and Routes
-- Controller Logic
-- Africa's Talking Callback URL
-- Ngrok (for Local Development)
-- Testing
 
 ### Setup
 
@@ -110,22 +66,67 @@ Clone this repository to your dist folder:
 git@github.com:Ayokunnumi1/zero-hunger-hackathon.git
 cd zero-hunger-hackathon
 ```
+### Create a New Rails App
+``` 
+rails new zero-hunger-hackathon
+cd zero-hunger-hackathon
+```
 
-### Install
+#### Africas talking API
+1. Sign Up for Africa's Talking
+- Visit [Africa's Talking](https://africastalking.com/ussd).
+- Click on "Sign Up" and create a new account.
+2. Verify Your Account
+- Check your email for a verification link from Africa's Talking.
+- Click the link to verify your account.
+3. Login to Your Africa's Talking Account
+- Go to Africa's Talking Login.
+- Enter your credentials and log in.
+4. Create a New Application
+In the dashboard, 
+- Navigate to "Sandbox Apps" or "Production Apps".
+- Click on "Create a New App".
+- Enter a name for your application (e.g., "USSDApp").
+- Save your new application.
+5. Obtain API Key
+- In your application dashboard, find your "API Key".
+- Copy the API key for use in your Rails application.
+6. Set Up a USSD Channel
+- Navigate to "USSD" in the dashboard.
+- Click on "Create Channel" or "Add Service Code".
+- Follow the prompts to set up a USSD code (e.g., *123#).
+- Link the USSD code to your application.
+7. Configure Callback URL
+- Set the "Callback URL" to point to your Rails application's endpoint (e.g., https://yourdomain.com/ussd).
+Use Ngrok for local development (e.g., https://your-ngrok-subdomain.ngrok.io/ussd).
+8. Add Africa's Talking Credentials to Rails
 
-Install this project with:
-- In Gemfile, add
-gem 'africastalking' and
-gem 'install rails'
+#### Ngrok
+- Go to [ngrok](https://ngrok.com/) and sign up for a free account or login if you already have one.
+- To install ngrok, visit [the download page](https://ngrok.com/download).
+- To connect your account to ngrok run ``` ngrok authtoken <your authtoken> ``` and replace <your authtoken> with your authtoken.
+- We will get back to ngrok later, let's first setup our rails app.
 
-- Run bundle install
 
-Make sure that server is running
-rails s
+### Ruby gems
+- gem 'rack-cors'
+- gem 'africastalking'```.
+- Add the following gems to your gemfile and run 
+``` bundle install ```.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Video Demo <a name="live-demo"></a>
+
+- [Live Video Link]()
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ### Usage
 
-Use this project in the sandbox demo of Africastalking ussd website.
+Use this project in the sandbox demo of Africastalking ussd API.
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -158,7 +159,7 @@ Use this project in the sandbox demo of Africastalking ussd website.
 ## 🔭 Future Features <a name="future-features"></a>
 
 - Utilize iot devices for food delivery
-- Feedback
+- Feedback functionality.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
