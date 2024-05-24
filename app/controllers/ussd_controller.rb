@@ -1,4 +1,5 @@
 class UssdController < ApplicationController
+
     skip_before_action :verify_authenticity_token
     skip_before_action :authenticate_user!
 
@@ -50,8 +51,20 @@ class UssdController < ApplicationController
                      "END Invalid choice"
                    end
       end
-
-      render plain: response
+    else
+      response = case text
+                 when ''
+                   "CON Welcome back #{consumers.name}! \n1. Find Surplus Food \n2. Register Food Bank \n3. Be a Food Donor"
+                 when '1'
+                   # Geolocation logic to find nearby food banks
+                   "CON Here are the Food Banks near you: \n1. Kampala \n2. Teso"
+                 when '2'
+                   "END Your phone number is #{phone_number}"
+                 else
+                   'END Invalid choice'
+                 end
     end
+
+    render plain: response
   end
-  
+end
