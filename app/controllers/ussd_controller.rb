@@ -10,17 +10,18 @@ class UssdController < ApplicationController
       phone_number = params[:phoneNumber]
       text = params[:text]
 
-      consumers = Consumer.find_by(phone_number: phone_number)
-
-      if consumers.nil?
-        if text.empty?
-          response = "CON Welcome to Haba na Haba Food Surplus Community. Please enter your name:"
-        else
-          consumers = Consumer.create(phone_number: phone_number, name: text)
-          response = "CON Hi #{consumers.name}. welcome to Haba na Haba Food Surplus Community  \n1. Find Surplus Food \n2. Register Food Bank \n3. Be a Food Donor"
-        end
-      else
         response = case text
+
+                    consumers = Consumer.find_by(phone_number: phone_number)
+
+                    if consumers.nil?
+                      if text.empty?
+                        response = "CON Welcome to Haba na Haba Food Surplus Community. Please enter your name:"
+                      else
+                        consumers = Consumer.create(phone_number: phone_number, name: text)
+                        response = "CON Hi #{consumers.name}. welcome to Haba na Haba Food Surplus Community  \n1. Find Surplus Food \n2. Register Food Bank \n3. Be a Food Donor"
+                      end
+                    else
                    when ''
                      "CON Welcome back #{consumers.name}! \n1. Find Surplus Food \n2. Register Food Bank \n3. Be a Food Donor"
                    when '1' 
