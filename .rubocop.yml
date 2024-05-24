@@ -1,16 +1,26 @@
-NewCops: enable
-Exclude:
-  - "db/**/*"
-  - "bin/*"
-  - "config/**/*"
-  - "Guardfile"
-  - "Rakefile"
-  - "node_modules/**/*"
+# Enable NewCops globally
+AllCops:
+  NewCops: enable
 
-DisplayCopNames: true
+# Exclude specified directories and files
+AllCops:
+  Exclude:
+    - "db/**/*"
+    - "bin/*"
+    - "config/**/*"
+    - "Guardfile"
+    - "Rakefile"
+    - "node_modules/**/*"
 
+# Display cop names in RuboCop output
+AllCops:
+  DisplayCopNames: true
+
+# Layout cop settings
 Layout/LineLength:
   Max: 120
+
+# Metrics cops settings
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
@@ -27,6 +37,7 @@ Metrics/BlockLength:
   AllowedMethods: ["describe"]
   Max: 30
 
+# Style cops settings
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -47,6 +58,7 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
@@ -60,8 +72,6 @@ Style/HashTransformValues:
 
 # Disable individual cops
 Metrics/CyclomaticComplexity:
-  Enabled: false
-Metrics/MethodLength:
   Enabled: false
 Metrics/PerceivedComplexity:
   Enabled: false
