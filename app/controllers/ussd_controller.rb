@@ -1,5 +1,7 @@
 class UssdController < ApplicationController
     skip_before_action :verify_authenticity_token
+    skip_before_action :authenticate_user!
+
   
     def handle_ussd
       session_id = params[:sessionId]
@@ -33,7 +35,7 @@ class UssdController < ApplicationController
                       "CON Here are the Food Banks near you:\n#{food_banks_list}"
                     when '1*1','1*2','1*3','1*4','1*5'
                       "CON How many people need help. \n1. 1-2 people \n2. 3-6 People \n3. 7-20 People \n4. Many(30 Approx)"
-                    when '1*1*1'
+                    when '1*1*1', '1*2*2', '1*3*3', '1*4*4'
                       "CON Choose amount of food supply needed. \n1. Small \n2. Medium \n3. Large \n4. Community"
                     when '1*1*1*1'
                       "END Thank you we are reaching out to you as soon as possible."
