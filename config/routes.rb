@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :food_lists
   get 'home/index'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
 
   # Root url
   root to: 'home#index'
+  resources :food_lists
 
   # Defines the root path route ("/")
   # root "posts#index"

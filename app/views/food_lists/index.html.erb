@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <h1>Food Lists</h1>
+        <%= link_to "New food list", new_food_list_path, class: "btn btn-success" %>
+      </div>
 
-<h1>Food lists</h1>
-
-<div id="food_lists">
-  <% @food_lists.each do |food_list| %>
-    <%= render food_list %>
-    <p>
-      <%= link_to "Show this food list", food_list %>
-    </p>
-  <% end %>
+      <div id="food_lists">
+        <% @food_lists.each do |food_list| %>         
+          <div class="card mb-3">
+            <%= render food_list %>
+            <p>
+              <%= link_to "Show this food list", food_list, class: "btn btn-primary ml-4" %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New food list", new_food_list_path %>
