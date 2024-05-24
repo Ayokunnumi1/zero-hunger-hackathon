@@ -2,7 +2,7 @@ class UssdController < ApplicationController
     skip_before_action :verify_authenticity_token
     skip_before_action :authenticate_user!
 
-  
+ 
     def handle_ussd
       session_id = params[:sessionId]
       service_code = params[:serviceCode]
@@ -50,6 +50,7 @@ class UssdController < ApplicationController
                      "END Invalid choice"
                    end
       end
+
       render plain: response
     end
   end
