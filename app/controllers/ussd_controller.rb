@@ -9,9 +9,9 @@ class UssdController < ApplicationController
       service_code = params[:serviceCode]
       phone_number = params[:phoneNumber]
       text = params[:text]
-      
+
       consumers = Consumer.find_by(phone_number: phone_number)
-      
+
       if consumers.nil?
         if text.empty?
           response = "CON Welcome to Haba na Haba Food Surplus Community. Please enter your name:"
