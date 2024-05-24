@@ -1,0 +1,2 @@
+module UssdHelper
+end
