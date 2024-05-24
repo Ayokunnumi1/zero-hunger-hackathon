@@ -1,8 +1,7 @@
-<%= form_with(model: food_list) do |form| %>
+<%= form_with(model: food_list, local: true, class: "needs-validation", novalidate: true) do |form| %>
   <% if food_list.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(food_list.errors.count, "error") %> prohibited this food_list from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h2><%= pluralize(food_list.errors.count, "error") %> prohibited this food list from being saved:</h2>
       <ul>
         <% food_list.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,32 +10,32 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :food_name, style: "display: block" %>
-    <%= form.text_field :food_name %>
+  <div class="form-group">
+    <%= form.label :food_name %>
+    <%= form.text_field :food_name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :food_amount, style: "display: block" %>
-    <%= form.number_field :food_amount %>
+  <div class="form-group">
+    <%= form.label :food_amount %>
+    <%= form.number_field :food_amount, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :donate_date, style: "display: block" %>
-    <%= form.date_field :donate_date %>
+  <div class="form-group">
+    <%= form.label :donate_date %>
+    <%= form.date_field :donate_date, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :collected_from, style: "display: block" %>
-    <%= form.text_field :collected_from %>
+  <div class="form-group">
+    <%= form.label :collected_from %>
+    <%= form.text_field :collected_from, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :donar_name, style: "display: block" %>
-    <%= form.text_field :donar_name %>
+  <div class="form-group">
+    <%= form.label :donar_name %>
+    <%= form.text_field :donar_name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Save Food List", class: "btn btn-primary" %>
   </div>
 <% end %>
