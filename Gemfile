@@ -77,3 +77,5 @@ end
 
 # Devise gem to authenticate user
 gem 'devise'
+# Use aws-sdk-s3 to configure Rails to use Amazon Web Services
+gem 'aws-sdk-s3'
