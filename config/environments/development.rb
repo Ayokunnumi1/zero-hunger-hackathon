@@ -73,8 +73,8 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
-  config.hosts << "bb8f-105-163-24-177.ngrok-free.app"
-  config.hosts << "bb8f-105-163-24-177.ngrok-free.app"
+  config.hosts << "3d26-105-113-62-21.ngrok-free.app"
+  config.hosts << "3d26-105-113-62-21.ngrok-free.app"
 
   # Default mailer url options
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
