@@ -1,5 +1,5 @@
 require "AfricasTalking"
 
 username = 'sandbox'
-apiKey 	= 'b40f8c40e99a4d91505c4521d78dc19b3157ca2b4fa5e7599db2e6fd18a0e00b'
+apiKey 	= 'atsk_843bd0ad01e4517e2537bb73a798aa64e4ce85cb9d98da5bebca11a55efe57e8b470ab92'
 @AT=AfricasTalking::Initialize.new(username, apiKey)
