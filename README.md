@@ -123,6 +123,10 @@ Use Ngrok for local development (e.g., https://your-ngrok-subdomain.ngrok.io/uss
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🔭 Future Features <a name="future-features"></a>
+
+- Utilize iot devices for food delivery
+- Feedback functionality.
 
 ### Usage
 
@@ -156,10 +160,6 @@ Use this project in the sandbox demo of Africastalking ussd API.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🔭 Future Features <a name="future-features"></a>
-
-- Utilize iot devices for food delivery
-- Feedback functionality.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
